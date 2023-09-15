@@ -3,19 +3,15 @@
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
 
 
-CREATE TABLE crowdfunding_db_schema.Category (
-    category_id varchar   NOT NULL,
-    category varchar  NOT NULL PRIMARY KEY
+CREATE TABLE "Category" (
+    "category_id" varchar   NOT NULL,
+    "category" varchar   NOT NULL,
+    CONSTRAINT "pk_Category" PRIMARY KEY (
+        "category_id"
+     )
 );
 
-
-Select * from crowdfunding_db_schema.category;
-
-
-Copy crowdfunding_db_schema.category from '"C:\Users\17139\Desktop\Crowdfunding_ETL\Resources\category.csv"' Delimiter ',' csv header; 
-
-
-CREATE TABLE crowdfunding_db_schema.Subcategory (
+CREATE TABLE "Subcategory" (
     "subcategory_id" varchar   NOT NULL,
     "subcategory_name" varchar   NOT NULL,
     CONSTRAINT "pk_Subcategory" PRIMARY KEY (
@@ -23,10 +19,7 @@ CREATE TABLE crowdfunding_db_schema.Subcategory (
      )
 );
 
-Select * from crowdfunding_db_schema.Subcategory;
-
-
-CREATE TABLE crowdfunding_db_schema.Contacts (
+CREATE TABLE "Contacts" (
     "contact_id" int   NOT NULL,
     "first_name" varchar   NOT NULL,
     "last_name" varchar   NOT NULL,
@@ -36,10 +29,7 @@ CREATE TABLE crowdfunding_db_schema.Contacts (
      )
 );
 
-Select * from crowdfunding_db_schema.Contacts;
-
-
-CREATE TABLE crowdfunding_db_schema.Campaign (
+CREATE TABLE "Campaign" (
     "cf_id" int   NOT NULL,
     "contact_id" int   NOT NULL,
     "company_name" varchar   NOT NULL,
@@ -58,9 +48,6 @@ CREATE TABLE crowdfunding_db_schema.Campaign (
         "cf_id"
      )
 );
-
-SELECT * FROM crowdfunding_db_schema.Campaign;
-
 
 ALTER TABLE "Category" ADD CONSTRAINT "fk_Category_category_id" FOREIGN KEY("category_id")
 REFERENCES "Campaign" ("category_id");
