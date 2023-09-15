@@ -1,6 +1,6 @@
 ﻿-- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
 -- Link to schema: https://app.quickdatabasediagrams.com/#/d/mLMsIP
--- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
+-- CSV FILES IMPORTED VIA MENU OPTIONS
 
 
 CREATE TABLE crowdfunding_db_schema.Category (
